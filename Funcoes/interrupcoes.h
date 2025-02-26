@@ -9,11 +9,9 @@ void gpio_irq_handler(uint gpio, uint32_t events){
             estado_buzzer = !estado_buzzer;
         }
         else if(gpio == botão_JOY){
-            selecao_modo = !selecao_modo;
-            selecao_log = false;
-            uint32_t press_start_time = to_us_since_boot(get_absolute_time());
-            if(current_time - press_start_time > 1000000){
-                selecao_log = true;
+            selecao_modo++;
+            if(selecao_modo==3){
+                selecao_modo = 0;
             }
         }
     }

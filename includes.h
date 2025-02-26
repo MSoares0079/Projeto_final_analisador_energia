@@ -31,8 +31,8 @@
 ssd1306_t ssd;
 bool cor = true;
 static volatile uint32_t last_time = 0,temporizador=0;
-static volatile bool estado_LED = true,estado_buzzer=true, selecao_modo = true,selecao_log = false,flag_contigencia=true;
-static uint16_t valor_led,sm,vrx,vry,sobre_tensao=0,sub_tensao=0,sobre_corrente=0;
+static volatile bool estado_LED = true,estado_buzzer=true,selecao_log = false,flag_contigencia=true;
+static uint16_t valor_led,sm,vrx,vry,sobre_tensao=0,sub_tensao=0,sobre_corrente=0,selecao_modo=0;
 static float v,i,r=7.5,x=0.0,z=7.5,fp=1.0;
 static char buffer1[50], buffer2[50], buffer3[50],buffer4[50],buffer5[50];
 

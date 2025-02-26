@@ -17,13 +17,13 @@ int main() {
         adc_select_input(0); 
         vry = adc_read();
 
-        if(selecao_modo||selecao_log){
+        if(selecao_modo<=1){
             medicao();//Mede os valores de V e I
-            detecta_contigencia(); 
+            detecta_contigencia();//Contabiliza as alterações de tensão e corrente
         }else{
             calibracao();//Altera os valores nominais de R, X e Z          
         }
-        desenha_tela();
+        desenha_tela();//Desenha na tela correspondente ao modo atual
         //printf("MODO: %d, LOG: %d", selecao_modo,selecao_log);     
         //printf("VRX: %u, VRY: %u,\n", vrx, vry);
         sleep_ms(100);

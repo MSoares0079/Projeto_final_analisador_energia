@@ -50,14 +50,15 @@ void desenha_log(){
 }
 
 void desenha_tela(){
-    if(selecao_log){
-        desenha_log();
-    }else{
-        if(selecao_modo){
+    switch(selecao_modo){
+        case 0:
             desenha_medicao();
-        }else{
+            break;
+        case 1:
+            desenha_log();
+            break;
+        case 2:
             desenha_calibracao();
-        }
+            break;
     }
-    
 }
